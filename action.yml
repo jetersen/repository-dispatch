@@ -7,12 +7,17 @@ inputs:
   repository:
     description: 'The full name of the repository to send the dispatch.'
     default: ${{ github.repository }}
+    required: false
+  repositories:
+    description: 'The full name of the repository to send the dispatch.'
+    required: false
   event-type:
     description: 'A custom webhook event name.'
     required: true
   client-payload:
     description: 'JSON payload with extra information about the webhook event that your action or worklow may use.'
     default: '{}'
+    required: false
 runs:
   using: 'node12'
   main: 'dist/index.js'
